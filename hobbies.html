@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pravina Arun - Hobbies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+      <div class="container-fluid px-5">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto gap-4">
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active nav-link-custom" aria-current="page" href="hobbies.html">Hobbies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom" href="achievements.html">Achievements</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <span class="theme-toggle" id="themeToggle" title="Toggle dark mode">🌙</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hobbies Section -->
+    <section class="hobbies-section">
+      <div class="container-fluid">
+        <div class="hobbies-header mb-5">
+          <h1 class="hobbies-title">My Hobbies</h1>
+          <p class="hobbies-subtitle">Things I'm passionate about</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Hobby 1: Volleyball -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="hobby-card">
+              <div class="hobby-icon">⚽</div>
+              <h3 class="hobby-name">Volleyball</h3>
+              <p class="hobby-description">I love playing volleyball and staying active. It's not just a sport for me, it's a way to stay fit, have fun, and build teamwork skills.</p>
+            </div>
+          </div>
+
+          <!-- Hobby 2: Coding -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="hobby-card">
+              <div class="hobby-icon">💻</div>
+              <h3 class="hobby-name">Coding</h3>
+              <p class="hobby-description">Passionate about coding in Java, C++, HTML, and Python. Creating elegant solutions and building amazing applications is my passion.</p>
+              <div class="language-tags">
+                <span class="tag">Java</span>
+                <span class="tag">C++</span>
+                <span class="tag">HTML</span>
+                <span class="tag">Python</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hobby 3: Annoying Sister -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="hobby-card">
+              <div class="hobby-icon">😄</div>
+              <h3 class="hobby-name">Annoying My Sister</h3>
+              <p class="hobby-description">What can I say? It's a hobby! Nothing beats quality time with family, even if it involves a little playful teasing and mischief.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 text-center">
+          <a href="index.html" class="btn btn-dark btn-lg back-btn">Back to Home</a>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+      // Dark Mode Toggle
+      const themeToggle = document.getElementById('themeToggle');
+      const html = document.documentElement;
+      
+      // Check for saved theme preference or default to light mode
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      html.setAttribute('data-theme', currentTheme);
+      updateThemeIcon(currentTheme);
+      
+      function updateThemeIcon(theme) {
+        themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+      }
+      
+      themeToggle.addEventListener('click', () => {
+        const theme = html.getAttribute('data-theme');
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+      });
+    </script>
+  </body>
+</html>
